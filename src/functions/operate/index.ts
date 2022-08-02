@@ -4,6 +4,17 @@ export default {
     {
       http: {
         method: 'get',
+        cors: {
+          origin: '*',
+          headers: [
+            'Content-Type',
+            'X-Amz-Date',
+            'X-Api-Key',
+            'X-Amz-Security-Token',
+            'X-Amz-User-Agent',
+            'authorization'
+          ]
+        },
         path: 'operate',
         request:{
           parameters: {
