@@ -27,7 +27,20 @@ const serverlessConfiguration: AWS = {
     },
     lambdaHashingVersion: '20201221',
     region: 'ap-northeast-1',
-    stage: 'beta'
+    stage: 'beta',
+    iam: {
+      role: {
+        statements: [
+          {
+            'Effect': 'Allow',
+            'Action': [
+              'chime:*'
+            ],
+            'Resource': '*'
+          }
+        ]
+      }
+    }
   },
   functions: { operate }
 }
